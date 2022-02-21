@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public Transform bulletPos;
     public float fireRate;
     float fireTime;
-    public GameObject bullet;
+    public GameObject bullet, shootEffect;
     public float spread;
     public float bulletSpeed;
     public int dmg, knockBack;
@@ -193,6 +193,8 @@ public class PlayerController : MonoBehaviour
         b.GetComponent<Rigidbody2D>().velocity = bulletPos.right * bulletSpeed;
         b.GetComponent<Dmg>().dmg = dmg;
         b.GetComponent<Dmg>().knockBack = knockBack;
+
+        Instantiate(shootEffect, bulletPos.position, bulletPos.rotation);
 
         fireTime = fireRate;
     }

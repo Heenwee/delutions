@@ -228,6 +228,7 @@ MonoBehaviour:
   bulletPos: {fileID: 1659550168}
   fireRate: 0.3
   bullet: {fileID: 6302791411780855062, guid: 8e4b9b235415da64f89e76166ed44e70, type: 3}
+  shootEffect: {fileID: 3893884177104450367, guid: aec5b1ba53416984e8a12f467e685742, type: 3}
   spread: 5
   bulletSpeed: 25
   dmg: 40
@@ -1545,7 +1546,7 @@ Transform:
   m_GameObject: {fileID: 638783463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 26.999477, y: 15.000151, z: 1}
+  m_LocalScale: {x: 30, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1903673401}

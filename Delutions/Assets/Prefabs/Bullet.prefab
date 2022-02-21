@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6724597640253732812}
   - component: {fileID: 6724597640253732811}
   - component: {fileID: 5566289194582197267}
+  - component: {fileID: 4462319512571026742}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
@@ -166,6 +167,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2950873501e5945b6f069e93327e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4462319512571026742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302791411780855062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c32177b4376f340ae33adae4889711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: []
+  colDestroy: 1
+  sound: {fileID: 0}
+  volume: 1
+  effect:
+  - {fileID: 4432392349803162902, guid: b0692192c11a0e54ca51d42fcdcbc8f9, type: 3}
+  DissapearTime: 5
+  dissapearTimeMult: 1
+  trailParticles: {fileID: 0}
+  camShakeDur: 0
+  camShakeMag: 0
 --- !u!1 &8626546811236409021
 GameObject:
   m_ObjectHideFlags: 0
