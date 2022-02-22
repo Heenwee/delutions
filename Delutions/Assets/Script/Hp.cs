@@ -14,7 +14,7 @@ public class Hp : MonoBehaviour
     Quaternion lastColRot;
 
     //public GameObject dmgText;
-    public float dmgTextRandom = 0.1f;
+    //public float dmgTextRandom = 0.1f;
 
     [HideInInspector]
     public bool clamp;
@@ -35,11 +35,13 @@ public class Hp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Spell"))
+        if(col.CompareTag("Bullet"))
         {
             Dmg dmg = col.gameObject.GetComponent<Dmg>();
             if(dmg != null)
             {
+                Instantiate(hitEffect, transform.position, lastColRot);
+
                 Debug.Log("Hit");
                 currentHp -= dmg.dmg;
                 rb.velocity = col.transform.right * dmg.knockBack;
@@ -68,7 +70,21 @@ public class Hp : MonoBehaviour
     }
     void Die()
     {
-        Instantiate(deathEffect, transform.position, lastColRot);
+        Instantiate(deathEffect, transform.position, transform.rotation);
+
+        Transform[] children = gameObject.GetComponentsInChildren<Transform>();
+        foreach (Transform c in children)
+        {
+            c.transform.parent = null;
+            Rigidbody2D cRb = c.GetComponent<Rigidbody2D>();
+            if (cRb != null) cRb.simulated = true;
+            cRb.AddForce(Random.onUnitSphere * 100);
+            cRb.AddTorque(Random.Range(-10f, 10f));
+
+            RotateSprite rs = c.GetComponent<RotateSprite>();
+            if (rs != null) rs.enabled = false;
+        }
+
         Destroy(gameObject);
     }
 }

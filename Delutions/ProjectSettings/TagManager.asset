@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grapple
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ground
   - Bullet
   - Enemy
-  - 
+  - Corpse
   - 
   - 
   - 

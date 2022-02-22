@@ -4892,8 +4892,8 @@ MonoBehaviour:
   DissapearTime: 3
   dissapearTimeMult: 1
   trailParticles: {fileID: 0}
-  camShakeDur: 0.15
-  camShakeMag: 0.2
+  camShakeDur: 0.1
+  camShakeMag: 0.1
 --- !u!1 &6884938291494798206
 GameObject:
   m_ObjectHideFlags: 0

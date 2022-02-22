@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject spriteMask;
 
+    GameManager gm;
+
     [HideInInspector]
     public bool clamp = true;
 
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lr = grappleLine.GetComponent<LineRenderer>();
         joint = GetComponent<DistanceJoint2D>();
+        gm = GameManager.instance;
     }
 
     // Update is called once per frame
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
         if (jump) jumpBuffer -= Time.deltaTime;
         if (jumpBuffer <= 0) jump = false;
+
+        gm.otherside = currentTarget != null;
 
         Grapple();
         Attack();
