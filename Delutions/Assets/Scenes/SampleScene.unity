@@ -2784,6 +2784,7 @@ GameObject:
   - component: {fileID: 1517505856}
   - component: {fileID: 1517505855}
   - component: {fileID: 1517505858}
+  - component: {fileID: 1517505859}
   m_Layer: 11
   m_Name: Enemy_Basic
   m_TagString: Untagged
@@ -2820,7 +2821,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -2862,6 +2863,18 @@ MonoBehaviour:
   hitEffect: {fileID: 4147085283549374290, guid: bf4e4d1012791824eb11615128772bf1, type: 3}
   deathEffect: {fileID: 1991279753954883507, guid: cc596af04b7bd774684cf9524dea85fd, type: 3}
   clamp: 0
+--- !u!114 &1517505859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517505854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69ec917ccb04a49b308ecc89e9e852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548922681
 GameObject:
   m_ObjectHideFlags: 0
