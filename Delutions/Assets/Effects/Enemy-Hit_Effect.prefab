@@ -19499,7 +19499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: []
   colDestroy: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 6f1707b1207bd7e47be9055a5b2989ae, type: 3}
   volume: 1
   effect: []
   DissapearTime: 3

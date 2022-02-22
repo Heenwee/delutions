@@ -10,8 +10,11 @@ public class EnemyMovement : MonoBehaviour
 
     Transform player;
 
-    public float speed, aceleration;
+    public float speed, acceleration;
     Vector2 movement;
+
+    public float partMove, partMoveSpeed;
+    public Transform[] bodyParts;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +34,15 @@ public class EnemyMovement : MonoBehaviour
         mov.Normalize();
 
         movement = mov;
+
+        Visuals();
     }
     void FixedUpdate()
     {
         if(gm.otherside)
         {
             thisCol.isTrigger = false;
+            rb.AddForce(movement * acceleration);
         }
         else
         {
@@ -52,5 +58,15 @@ public class EnemyMovement : MonoBehaviour
         Vector2 velocity = new Vector2(rb.velocity.x, 0);
         Vector2 vel = Vector2.ClampMagnitude(velocity, speed);
         rb.velocity = new Vector2(vel.x, rb.velocity.y);
+    }
+
+    void Visuals()
+    {
+        for (int i = 0; i < bodyParts.Length; i++)
+        {
+            bodyParts[i].localPosition = Vector2.MoveTowards(   bodyParts[i].localPosition,
+                                                                new Vector2((rb.velocity.x * partMove * i) / bodyParts.Length, bodyParts[i].localPosition.y),
+                                                                partMoveSpeed * Time.deltaTime);
+        }
     }
 }

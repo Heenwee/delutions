@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public Rigidbody2D visualRb;
 
-    public float speed = 10f, speedUp = 75f;
+    public float defSpeed = 10f, grappleSpeed, speedUp = 75f;
+    float speed;
     float currentSpeed;
 
     bool isGrounded;
@@ -62,6 +63,9 @@ public class PlayerController : MonoBehaviour
         if (jumpBuffer <= 0) jump = false;
 
         gm.otherside = currentTarget != null;
+
+        if (!gm.otherside) speed = defSpeed;
+        else speed = grappleSpeed;
 
         Grapple();
         Attack();

@@ -40,6 +40,8 @@ public class Hp : MonoBehaviour
             Dmg dmg = col.gameObject.GetComponent<Dmg>();
             if(dmg != null)
             {
+                lastColRot = col.transform.rotation;
+
                 Instantiate(hitEffect, transform.position, lastColRot);
 
                 Debug.Log("Hit");
@@ -57,8 +59,6 @@ public class Hp : MonoBehaviour
                 txt.transform.localScale = new Vector2(0.2f, 0.2f);
                 Text text = txt.GetComponent<Text>();
                 text.text = (col.GetComponent<Dmg>().dmg).ToString();*/
-
-                lastColRot = col.transform.rotation;
             }
         }
     }
@@ -83,6 +83,16 @@ public class Hp : MonoBehaviour
 
             RotateSprite rs = c.GetComponent<RotateSprite>();
             if (rs != null) rs.enabled = false;
+
+            Dissapear d = c.GetComponent<Dissapear>();
+            if (d != null) d.enabled = true;
+
+            SpriteRenderer sr = c.GetComponent<SpriteRenderer>();
+            if (sr != null) 
+            {
+                sr.color *= 0.8f;
+                sr.sortingOrder -= 1;
+            }
         }
 
         Destroy(gameObject);

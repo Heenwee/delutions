@@ -5011,7 +5011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: []
   colDestroy: 0
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 7eebef47cf2ca2c46811ec975db4a039, type: 3}
   volume: 1
   effect: []
   DissapearTime: 3
