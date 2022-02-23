@@ -70,3 +70,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4707712833873594597, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+--- !u!1 &6089594728281148599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707712833873594520, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+  m_PrefabInstance: {fileID: 1573922054772573231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6089594728582035646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4707712833576926353, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+  m_PrefabInstance: {fileID: 1573922054772573231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1115736133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089594728281148599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc4b25b72181b640a5380f4a3302535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 6089594728582035646}
+  shootEffect: {fileID: 6275703025426273066, guid: a663f54c2739ed544858f5bd02928f00, type: 3}
+  hitEffect: {fileID: 6275703025426273066, guid: a663f54c2739ed544858f5bd02928f00, type: 3}
+  playerHitEffect: {fileID: 3913068504573182444, guid: b96f60beb9deb2440b0d070642c6d1a5, type: 3}
+  fireRate: 1
+  startFireTime: 2
+  delay: 0.5
+  dmg: 15
+  knockBack: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 768
