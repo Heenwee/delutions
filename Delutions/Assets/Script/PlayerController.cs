@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
 
     public float defSpeed = 10f, grappleSpeed, speedUp = 75f;
     float speed;
-    float currentSpeed;
 
     bool isGrounded;
     bool jump;
