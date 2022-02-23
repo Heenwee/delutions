@@ -9,6 +9,7 @@ public class Hp : MonoBehaviour
 
     public int hp;
     int currentHp;
+    public int score;
 
     public GameObject hitEffect, deathEffect;
     Quaternion lastColRot;
@@ -70,6 +71,8 @@ public class Hp : MonoBehaviour
     }
     void Die()
     {
+        ScoreManager.instance.score += score;
+
         Instantiate(deathEffect, transform.position, transform.rotation);
 
         Transform[] children = gameObject.GetComponentsInChildren<Transform>();

@@ -32,6 +32,10 @@ PrefabInstance:
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4707712833873594596, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+      propertyPath: score
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707712833873594596, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 177037913143778724, guid: 67ba7ad2728ed5743b585b4b8640fac8, type: 3}

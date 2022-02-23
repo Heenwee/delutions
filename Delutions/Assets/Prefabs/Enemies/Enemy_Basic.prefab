@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  score: 100
   hitEffect: {fileID: 4147085283549374290, guid: bf4e4d1012791824eb11615128772bf1, type: 3}
   deathEffect: {fileID: 1991279753954883507, guid: cc596af04b7bd774684cf9524dea85fd, type: 3}
   clamp: 0

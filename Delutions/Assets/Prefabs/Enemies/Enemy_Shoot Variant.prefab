@@ -17,8 +17,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4707712833873594520, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
       propertyPath: m_Name
-      value: Enemy_Shoot
+      value: Enemy_Shoot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4707712833873594596, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+      propertyPath: score
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707712833873594596, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 3849917060158511548, guid: d1724e39f4bd43147a1e381266384235, type: 3}
+    - target: {fileID: 4707712833873594596, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 249243668352848384, guid: 5b5edccaab285584e84485c11c06b5f6, type: 3}
     - target: {fileID: 4707712833873594599, guid: 12a6cd1fe61733040a4ec89ef0f3caee, type: 3}
       propertyPath: m_RootOrder
       value: 0

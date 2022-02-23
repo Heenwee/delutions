@@ -18,12 +18,16 @@ public class EnemyShooting : MonoBehaviour
 
     public LayerMask layerMask;
 
+    Rigidbody2D rb;
     GameManager gm;
+    Collider2D thisCol;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         gm = GameManager.instance;
+        thisCol = GetComponent<Collider2D>();
         player = GameObject.Find("Player").transform;
 
         fireTime = startFireTime;
@@ -37,6 +41,19 @@ public class EnemyShooting : MonoBehaviour
             if (fireTime <= 0) StartCoroutine(Shoot());
 
             fireTime -= Time.deltaTime;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (gm.otherside)
+        {
+            thisCol.isTrigger = false;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            thisCol.isTrigger = true;
         }
     }
 
