@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     public float jumpHeight = 3f;
     public float jumpTorque;
+    public GameObject jumpEffect;
 
     Transform currentTarget;
     public float maxDistToTarget;
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity += jumpforce;
 
                 visualRb.AddTorque(Random.Range(-jumpTorque, jumpTorque));
+                Instantiate(jumpEffect, transform.position, transform.rotation);
 
                 jump = false;
                 holding = true;
