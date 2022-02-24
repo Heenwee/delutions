@@ -72,6 +72,7 @@ public class Hp : MonoBehaviour
     void Die()
     {
         ScoreManager.instance.score += score;
+        GameManager.instance.currentEnemyCount--;
 
         Instantiate(deathEffect, transform.position, transform.rotation);
 

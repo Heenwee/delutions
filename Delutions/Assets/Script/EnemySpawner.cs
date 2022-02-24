@@ -6,10 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemies;
 
-    public float spawnRate;
+    public float startSpawnRate, spawnRateIncrease;
     float spawnTime;
     public float spawnBounds;
     public LayerMask layerMask;
+
+    public int baseEnemyCount, enemyIncrease;
+    int enemiesSpawned;
 
     GameManager gm;
 
@@ -17,6 +20,12 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         gm = GameManager.instance;
+
+        if (gm.currentEnemyMaxCount == 0) gm.currentEnemyMaxCount = baseEnemyCount;
+        else gm.currentEnemyMaxCount += enemyIncrease;
+
+        if (gm.spawnRate == 0) gm.spawnRate = startSpawnRate;
+        else gm.spawnRate *= spawnRateIncrease;
     }
 
     // Update is called once per frame
@@ -29,10 +38,17 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn()
     {
-        spawnTime = spawnRate;
-        float point = Random.Range(-spawnBounds, spawnBounds);
+        if(enemiesSpawned < gm.currentEnemyMaxCount)
+        {
+            gm.currentEnemyCount++;
+            enemiesSpawned++;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(point, 0), -Vector2.up, Mathf.Infinity, layerMask);
-        Instantiate(enemies[Random.Range(0, enemies.Length)], hit.point + new Vector2(0, 1), transform.rotation);
+            spawnTime = gm.spawnRate;
+            float point = Random.Range(-spawnBounds, spawnBounds);
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(point, 0), -Vector2.up, Mathf.Infinity, layerMask);
+            Instantiate(enemies[Random.Range(0, enemies.Length)], hit.point + new Vector2(0, 1), transform.rotation);
+            if (enemiesSpawned >= gm.currentEnemyMaxCount) gm.allEnemiesSpawned = true;
+        }
     }
 }
