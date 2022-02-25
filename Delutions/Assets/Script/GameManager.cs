@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         allEnemiesSpawned = false;
         reloaded = false;
 
-        if (currentMap < maps.Length - 1) currentMap++;
+        if (currentMap < maps.Length-1) currentMap++;
         else
         {
             currentMap = 0;

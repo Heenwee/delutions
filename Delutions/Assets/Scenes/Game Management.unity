@@ -176,7 +176,9 @@ MonoBehaviour:
   currentEnemyMaxCount: 0
   spawnRate: 0
   maps:
-  - {fileID: 4623174272288304156, guid: d536e1aff984628459f962bfc8716a1e, type: 3}
+  - {fileID: 3031214969211261082, guid: a4a3c02cc4d56994fb9060ba8ae57049, type: 3}
+  - {fileID: 815088102805366017, guid: 4f088cfa42188564486f564c80d6d872, type: 3}
+  - {fileID: 8181444946090746871, guid: 70c6f0a56d9efeb46a4cffa40c5de0fb, type: 3}
 --- !u!114 &861693757
 MonoBehaviour:
   m_ObjectHideFlags: 0
