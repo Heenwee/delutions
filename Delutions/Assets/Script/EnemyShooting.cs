@@ -81,7 +81,7 @@ public class EnemyShooting : MonoBehaviour
                 PlayerHp hp = obj.GetComponent<PlayerHp>();
                 if (hp != null)
                 {
-                    Debug.Log("Hit");
+                    hp.TakeDamage(dmg);
 
                     Instantiate(playerHitEffect, obj.transform.position, effectRot);
                 }

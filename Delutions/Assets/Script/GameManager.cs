@@ -66,6 +66,18 @@ public class GameManager : MonoBehaviour
             reloaded = true;
         }
     }
+
+    public void DeathReload() { StartCoroutine(DelayReload()); }
+    IEnumerator DelayReload()
+    {
+        yield return new WaitForSeconds(5);
+        StartReload();
+        ScoreManager.instance.score = 0;
+
+        currentEnemyCount = 0;
+        spawnRate = EnemySpawner.instance.startSpawnRate;
+    }
+
     void Reload()
     {
         allEnemiesSpawned = false;

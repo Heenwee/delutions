@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject ballGrappleEffect, grappleEffect;
     LineRenderer lr;
     DistanceJoint2D joint;
+    public float jointCloseRate;
 
     [Header("Shooting")]
     public Transform bulletPos;
@@ -62,10 +63,10 @@ public class PlayerController : MonoBehaviour
         if (jump) jumpBuffer -= Time.deltaTime;
         if (jumpBuffer <= 0) jump = false;
 
-        gm.otherside = currentTarget != null;
+        if(gm != null)gm.otherside = currentTarget != null;
 
-        if (!gm.otherside) speed = defSpeed;
-        else speed = grappleSpeed;
+        if (currentTarget == null) speed = defSpeed;
+         else speed = grappleSpeed;
 
         Grapple();
         Attack();
@@ -172,6 +173,12 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonUp("Jump") && holding)
             {
                 holding = false;
+            }
+
+            if(currentTarget != null)
+            {
+                if (Input.GetButton("Jump")) joint.autoConfigureDistance = false;
+                else joint.autoConfigureDistance = true;
             }
         }
     }

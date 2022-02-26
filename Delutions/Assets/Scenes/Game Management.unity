@@ -179,6 +179,8 @@ MonoBehaviour:
   - {fileID: 3031214969211261082, guid: a4a3c02cc4d56994fb9060ba8ae57049, type: 3}
   - {fileID: 815088102805366017, guid: 4f088cfa42188564486f564c80d6d872, type: 3}
   - {fileID: 8181444946090746871, guid: 70c6f0a56d9efeb46a4cffa40c5de0fb, type: 3}
+  - {fileID: 3919858565702284650, guid: 1d53e5f70b3008f41a148201bdce01da, type: 3}
+  - {fileID: 8929229440214029119, guid: 04ecf45393098a846b0ab82d3b772caa, type: 3}
 --- !u!114 &861693757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1000979125
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

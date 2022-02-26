@@ -39,17 +39,19 @@ public class EnemyMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(gm.otherside)
+        if(gm != null)
         {
-            thisCol.isTrigger = false;
-            rb.AddForce(movement * acceleration);
+            if (gm.otherside)
+            {
+                thisCol.isTrigger = false;
+                rb.AddForce(movement * acceleration);
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+                thisCol.isTrigger = true;
+            }
         }
-        else
-        {
-            rb.velocity = Vector2.zero;
-            thisCol.isTrigger = true;
-        }
-
         ClampVelocity();
     }
 

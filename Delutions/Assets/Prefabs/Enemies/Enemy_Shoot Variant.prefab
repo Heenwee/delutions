@@ -111,7 +111,7 @@ MonoBehaviour:
   fireRate: 1
   startFireTime: 2
   delay: 0.5
-  dmg: 15
+  dmg: 1
   knockBack: 5
   layerMask:
     serializedVersion: 2

@@ -31,7 +31,7 @@ public class Hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHp <= 0) Die();
+        if (currentHp <= 0 || transform.position.y < -50) Die();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -71,7 +71,7 @@ public class Hp : MonoBehaviour
     }
     void Die()
     {
-        ScoreManager.instance.score += score;
+        if(ScoreManager.instance != null)ScoreManager.instance.score += score;
         GameManager.instance.currentEnemyCount--;
 
         Instantiate(deathEffect, transform.position, transform.rotation);
